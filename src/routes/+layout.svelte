@@ -1,10 +1,13 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Header from '$lib/Header.svelte';
 
 	import type { LayoutData } from './$types';
 	import './styles.css';
 
 	export let data: LayoutData;
+
+	$: console.log('layout client', !!data.user, !!$page.data.user);
 </script>
 
 <div class="app">
